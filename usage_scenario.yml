@@ -1,0 +1,28 @@
+{
+  "flow": [
+    {
+      "name": "Check Website",
+      "commands": [
+        {
+          "note": "Starting Pupeteer Flow",
+          "type": "console",
+          "command": "node /var/www/puppeteer-flow.js",
+          "read-notes-stdout": true
+        }
+      ],
+      "container": "green-coding-puppeteer-container"
+    }
+  ],
+  "name": "Chrome Energy Test",
+  "author": "FKirsten",
+  "version": 1,
+  "services": {
+    "green-coding-puppeteer-container": {
+      "image": "greencoding/puppeteer-chrome",
+      "setup-commands": [
+        "cp /tmp/repo/puppeteer-flow.js /var/www/puppeteer-flow.js"
+      ]
+    }
+  },
+  "architecture": "linux"
+}
